@@ -1,0 +1,43 @@
+# Analysis of the 30-minute stay in Jorvik City
+activities = {
+    "Window shopping": 15,
+    "Checking horse gear": 10,
+    "Travel time": 5
+}
+
+def run_report():
+    total = sum(activities.values())
+    print(f"--- Project: Analyzing Jorvik City ---")
+    print(f"Total time spent by players: {total} minutes")
+    
+    if total <= 30:
+        print("Finding: High turnover. Players leave too fast.")
+
+if __name__ == "__main__":
+    run_report()
+
+# Comparing Jorvik City vs. The Open Island
+data = {
+    "Jorvik City": {
+        "Activities": ["Shopping", "Cafe"],
+        "Avg_Stay_Minutes": 30,
+        "Horse_Allowed": False
+    },
+    "Jorvik Island (Nature)": {
+        "Activities": ["Training", "Racing", "Exploring", "Socializing"],
+        "Avg_Stay_Minutes": 120,
+        "Horse_Allowed": True
+    }
+}
+
+def analyze_jorvik():
+    print("--- FULL JORVIK ANALYSIS ---")
+    for area, info in data.items():
+        print(f"\nLocation: {area}")
+        print(f"Typical stay: {info['Avg_Stay_Minutes']} minutes")
+        print(f"Activities: {', '.join(info['Activities'])}")
+        
+        if not info['Horse_Allowed']:
+            print("Status: Restricted (No horses = Less fun)")
+
+analyze_jorvik()
